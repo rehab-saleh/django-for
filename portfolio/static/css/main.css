@@ -1,0 +1,15 @@
+body{
+    background-color: #2222;
+    /* background-image: url('/static/images/marble.jpg'); */
+}
+
+#img-size{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px
+    }
+
+#container{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}

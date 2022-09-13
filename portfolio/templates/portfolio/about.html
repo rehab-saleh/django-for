@@ -1,0 +1,76 @@
+{% extends 'portfolio/main.html' %}
+
+{% block content %}
+
+
+<br>
+<div class="container" id="container">
+    <dir class="card text-black bg-secondary">
+        <div class="row align-items-center">
+            <div class="col-md-auto ml-0 mr-0 pl-0 pr-0">
+                <div class="card">
+                    <img src="{{info.p_pic.url}}" id="img-size">
+                </div>
+            </div>
+
+            <div class="col-md ml-1 mr-0 pl-0 pr-0">
+                <div class="card border-primary" > <!--style="width: 18rem;"-->
+                    <h5 dir class="card-header">Contacts</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{info.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{info.j_title}}<ob Title h6>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 text-muted">Mobile: {{info.mobile}}</h6>
+                               <h6 class="card-subtitle mb-2 text-muted">Phone: {{info.phone}}</h6>
+                            <a href="#" class="card-link">Email: {{info.email_1}}</a>
+                              <a href="#" class="card-link">Email: {{info.email_2}}</a>
+                        </ob>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</dir>
+
+
+<hr>
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card border-info"> <!--style="width: 18rem;"-->
+            <h5 dir class="card-header">Brief Info</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{info.name}}</h5>
+                <p class="card-text">{{info.about_me}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <!-- this card is used to present projects -->
+        <div class="card">
+            <div class="card-body">
+                {% for p in projects %}
+                <h5 class="card-title">{{p.p_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{p.date_created}}</h6>
+                <p class="card-text">{{p.brief_info}}</p>
+                <h6 class="card-subltite mb-1 text-muted">languages used</h6>
+                <div class="row justify-content-md-start pl-3 mt-0">
+                    {% for lang in p.language_skilles.all %}
+                    <dir class="col-auto pl-0 pr-1 mt-1 mb-1"><button type="button" class="btn btn-outline-secondary btn-sm py-0" style="font-size: 0.6em;" >{{lang}}</button></dir>
+                    {% endfor %}
+                </div>
+                <a href="#" class="card-link">github link</a>
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
