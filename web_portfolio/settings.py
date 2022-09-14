@@ -126,4 +126,3 @@ MEDIA_URL = '/images/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DISABLE_COLLECTSTATIC = 1
